@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=gbk"%>
+<%@page import="java.util.*,domain.*,service.imp.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>°à¼¶ÐÅÏ¢ÁÐ±í</title>
+</head>
+<body>
+<jsp:useBean id = "classesService" class = "service.imp.ClassesService" scope = "session"></jsp:useBean>
+<%
+	//µ÷ÓÃÒµÎñÂß¼­·½·¨£¬»ñÈ¡ËùÓÐ°à¼¶ÐÅÏ¢ÁÐ±í
+	List<Classes> list = classesService.getAllClasses();
+%>
+<%
+	for(Classes classes:list){
+%>
+<p><a href= "classes_detail?<%=classes.getClasses_id()%>" ></a>&nbsp;&nbsp;<%=classes.getClasses_name()%>&nbsp;&nbsp;<%=classes.getClasses_speciality()%></p>
+<%	
+	}
+	
+%>
+<a href = "addclasses.jsp">Ìí¼Ó°à¼¶</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=gbk"%>
+<%@page import="java.util.*,domain.*,service.imp.*,dao.imp.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>°à¼¶ÏêÇé</title>
+</head>
+<body>
+<jsp:useBean id="classesService" class="service.imp.ClassesService" scope="session"></jsp:useBean>
+<%
+	request.setCharacterEncoding("gbk");
+	String id = request.getParameter("classes_id");
+	out.println("°à¼¶±àºÅ£º"+id);	
+%>
+<%
+    //µ÷ÓÃÒµÎñÂß¼­²ã·½·¨£¬»ñÈ¡ËùÓÐÐÅÏ¢ÁÐ±í
+	List<Classes> list = classesService.getAllClasses();
+%>
+	<%
+		for(Classes classes:list){
+			if(classes.getClasses_id() == id){
+	%>	
+		<p>°à¼¶Ãû³Æ£º<%=classes.getClasses_name()%></p>
+	<%
+			}
+		}
+	%>			
+</body>
+</html>

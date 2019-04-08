@@ -1,0 +1,12 @@
+package dao;
+
+import java.util.List;
+
+import domain.Classes;
+
+public interface IGpaDAO {
+	//根据学号查询绩点，排名情况
+	public String getGpa(String student_id);
+	//获取所有班级信息
+		public List<Gpa> getAllGpa();
+}

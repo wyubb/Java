@@ -1,0 +1,9 @@
+package dao.imp;
+
+public class GpaDAO {
+
+	public GpaDAO() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

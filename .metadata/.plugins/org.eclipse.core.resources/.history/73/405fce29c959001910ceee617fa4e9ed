@@ -1,0 +1,24 @@
+package dao.imp;
+
+import java.util.List;
+
+import dao.Gpa;
+
+public class GpaDAO implements IGpaDAO{
+
+	public GpaDAO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	//根据学号查询绩点，排名情况
+		public String getGpa(String student_id) {
+			//sql
+			String sql = "select * from gpa where student_id ="+student_id+"'";
+		}
+		
+		//获取所有绩点信息
+		public List<Gpa> getAllGpa(){
+			//初始化查询语句
+			String sql = "select * from gpa where "
+		}
+}

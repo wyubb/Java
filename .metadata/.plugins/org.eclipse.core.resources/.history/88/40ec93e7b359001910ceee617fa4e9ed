@@ -1,0 +1,13 @@
+package service.imp;
+
+import dao.IStudentDAO;
+import dao.imp.StudentDAO;
+import service.IStudentService;
+
+public class StudentService implements IStudentService{
+	private 	IStudentDAO studentDAO = new StudentDAO();
+	public StudentService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

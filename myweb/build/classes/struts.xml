@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation //DTD Struts Configuration 2.3//EN" 
+	"http://struts.apache.org/dtds/struts-2.3.dtd" >
+<struts>
+	<!-- 定义myweb的包，继承struts2默认包，指定命名空间为“/” -->
+	<package name="myweb" namespace = "/" extends = "struts-default">
+		<action name = "login" class="com.myweb.action.LoginAction">
+			<result name = "success">
+				/index.jsp
+			</result>
+			<result name = "input">
+				/login.jsp
+			</result>
+		</action>	
+	</package>
+</struts>

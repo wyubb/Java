@@ -1,0 +1,6 @@
+package dao;
+
+public interface IGpa {
+	//根据学号查询绩点，排名情况
+	public String getGpa(String student_id);
+}

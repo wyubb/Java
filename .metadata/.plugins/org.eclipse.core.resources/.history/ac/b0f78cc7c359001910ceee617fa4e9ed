@@ -1,0 +1,13 @@
+package dao;
+
+import java.util.List;
+import domain.Student;
+
+public interface IStudentDAO {
+		//添加一个学生用户到数据库
+		public void addStudent(Student student);
+		//根据用户编号获取用户信息，以Student对象的形式返回
+		public Student getStudentByID(String id);
+		//根据用户名获取用户信息，以Student对象的形式返回
+		public List<Student> getStudentByUserName(String userName);
+}

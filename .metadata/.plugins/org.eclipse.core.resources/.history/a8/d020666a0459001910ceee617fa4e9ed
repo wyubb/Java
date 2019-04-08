@@ -1,0 +1,19 @@
+package service.imp;
+
+import java.util.List;
+
+import domain.Classes;
+
+public class ClassesService {
+
+	public ClassesService() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	//添加一条发布信息到数据库
+	public void addClasse(Classes classes)｛
+	｝
+	//获取所有信息列表
+	public List<Classes> getAllClasses()｛
+	｝
+}

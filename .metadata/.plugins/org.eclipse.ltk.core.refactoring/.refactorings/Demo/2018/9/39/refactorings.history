@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;bank/src/banking1&apos;&#x0D;&#x0A;－ 原始项目：“Demo”&#x0D;&#x0A;－ 目标元素：“bank/src/banking1”&#x0D;&#x0A;－ 原始元素：&#x0D;&#x0A;JavaRefactoringDescriptorComment_textual_move_only=仅移动文本Demo7.java&#x0D;&#x0A;JavaRefactoringDescriptorComment_textual_move_only=仅移动文本Demo8.java" description="复制编译单元" destination="=bank/src&lt;banking1" element1="/src&lt;{Demo7.java" element2="/src&lt;{Demo8.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1537951479418" units="2" version="1.0"/>
+</session>

@@ -1,0 +1,19 @@
+package dao;
+
+import java.util.List;
+
+import domain.Information;
+
+/**
+ * Information类对应的DAO接口，提供一些与信息相关的数据库增删查改操作的公开的方法声明
+ * @author Administrator
+ *
+ */
+public interface IInfoDAO {
+	//该方法实现添加一条信息到数据库中
+	public void addInfo(Information information);
+	//该方法获取所有信息列表
+	public List<Information> getAllInfo();
+	
+	public List<Information> getInfo(String id);
+}

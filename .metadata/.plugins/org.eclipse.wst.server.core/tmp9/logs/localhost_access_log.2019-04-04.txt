@@ -1,0 +1,11 @@
+127.0.0.1 - - [04/Apr/2019:11:47:22 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [04/Apr/2019:11:47:28 +0800] "GET /Chapter3 HTTP/1.1" 302 -
+127.0.0.1 - - [04/Apr/2019:11:47:30 +0800] "GET /Chapter3/ HTTP/1.1" 302 -
+127.0.0.1 - - [04/Apr/2019:11:47:30 +0800] "GET /Chapter3/login.jsp HTTP/1.1" 200 990
+127.0.0.1 - - [04/Apr/2019:11:47:30 +0800] "GET /css/images/WYU_logo_school1.png HTTP/1.1" 404 1056
+127.0.0.1 - - [04/Apr/2019:11:47:39 +0800] "POST /Chapter3/process_login.jsp HTTP/1.1" 500 3097
+127.0.0.1 - - [04/Apr/2019:11:48:38 +0800] "POST /Chapter3/process_login.jsp HTTP/1.1" 500 3097
+127.0.0.1 - - [04/Apr/2019:11:51:36 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [04/Apr/2019:11:51:47 +0800] "POST /Chapter3/process_login.jsp HTTP/1.1" 500 2568
+127.0.0.1 - - [04/Apr/2019:11:53:05 +0800] "POST /Chapter3/process_login.jsp HTTP/1.1" 500 2568
+127.0.0.1 - - [04/Apr/2019:11:59:08 +0800] "POST /Chapter3/process_login.jsp HTTP/1.1" 500 2568
