@@ -124,7 +124,9 @@ public class UserDAO implements IUserDAO{
 		//初始化数据库访问类
 		IDatabaseDAO myDB = new DatabaseDAO();
 		//构造SQL语句
-		String sql = "update users set RealName = '"+user.getRealName()+"',Gender = '"+user.getGender()+"',Age = '"+ user.getAge()+"' ,PersonalSignature = '"+ user.getPersonalSignature()+"', password = '"+ user.getPassword() +"'   where Username = '"+user.getUserName()+"'  ";
+		String sql = "update users set RealName = '"+user.getRealName()+"',Gender = '"+user.getGender()+"',"
+				+ "Age = '"+ user.getAge()+"' ,PersonalSignature = '"+ user.getPersonalSignature()+"',"
+						+ " password = '"+ user.getPassword() +"'   where Username = '"+user.getUserName()+"'  ";
 		System.out.println(sql);
 		try {
 			//执行SQL语句
@@ -135,4 +137,22 @@ public class UserDAO implements IUserDAO{
 			cnfEx.printStackTrace();
 		}			
 	}
+	
+	//删除用户
+		public void deleteUser(String username) {
+			//初始化数据库访问类
+			IDatabaseDAO myDB = new DatabaseDAO();
+			
+			//构造SQL语句
+			String sql = "delete from users where Username = '"+username+"'";
+			try {
+				//执行SQL语句
+				myDB.executeSQL(sql);
+			}catch(SQLException sqlEx){
+				sqlEx.printStackTrace();
+			}catch(ClassNotFoundException cnfEx) {
+				cnfEx.printStackTrace();
+			}		
+		}
+	
 }

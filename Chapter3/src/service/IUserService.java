@@ -22,5 +22,8 @@ public interface IUserService {
 	
 	//更新个人资料
 		public void updateUser(User user);
+		
+	//删除管理员用户
+		public void delete(String username);
 }
 

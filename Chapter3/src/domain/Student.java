@@ -9,7 +9,8 @@ public class Student {
 		private int grade;
 		private String student_class;
 		
-		private String gpa;				
+		private String gpa;	
+		
 		public String getGpa() {
 			return gpa;
 		}

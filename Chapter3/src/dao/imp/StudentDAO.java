@@ -150,7 +150,7 @@ public class StudentDAO implements IStudentDAO {
 			//返回结果
 				return list;
 }
-			//
+			//根据学生学号查询绩点
 			public Student getGpa(String student_id) {
 				IDatabaseDAO myDB = new DatabaseDAO();
 				Student student = new Student();
@@ -171,4 +171,77 @@ public class StudentDAO implements IStudentDAO {
 				}
 				return student;
 			}
+			
+			//更新学生用户信息
+			public void updateStudent(Student student ) {
+				//初始化数据库访问类
+				IDatabaseDAO myDB = new DatabaseDAO();
+				//构造SQL语句
+				String sql = "update student set student_name = '"+student.getStudent_name()+"',"
+						+ "student_tel = '"+student.getStudent_tel()+"',student_password = '"+student.getStudent_password()+"',"
+						+ "student_sex = '"+student.getStudent_sex()+"',student_class = '"+student.getStudent_class()+"',"
+								+ "grade = '"+student.getGrade()+"' where student_id ='"+student.getStudent_id()+"'";
+				System.out.println(sql);
+				try {
+					//执行SQL语句
+					myDB.executeSQL(sql);
+				}catch(SQLException sqlEx){
+					sqlEx.printStackTrace();
+				}catch(ClassNotFoundException cnfEx) {
+					cnfEx.printStackTrace();
+				}			
+			}
+				
+			//删除学生用户
+			public void deleteStudent(String student_id) {
+				//初始化数据库访问类
+				IDatabaseDAO myDB = new DatabaseDAO();
+				
+				//构造SQL语句
+				String sql = "delete from student where student_id = '"+student_id+"'";
+				try {
+					//执行SQL语句
+					myDB.executeSQL(sql);
+				}catch(SQLException sqlEx){
+					sqlEx.printStackTrace();
+				}catch(ClassNotFoundException cnfEx) {
+					cnfEx.printStackTrace();
+				}		
+			}
+			//根据班级编号获取该班级所有学生的名单
+			public List<Student> getStuedntByClass(String student_class){
+				IDatabaseDAO myDB = new DatabaseDAO();
+				Student student = new Student();
+				List<Student> list = new ArrayList<Student>();
+				String sql = "select * from student where student_class ='"+ student_class +"'";
+				try {
+					ResultSet mySet = myDB.getResultSet(sql);
+					while(mySet.next()) {
+						student.setStudent_id(mySet.getString("student_id"));
+						student.setStudent_name(mySet.getString("student_name"));
+						student.setStudent_sex(mySet.getString("student_sex"));
+						student.setStudent_tel(mySet.getString("student_tel"));
+						student.setStudent_class(mySet.getString("student_class"));
+						student.setStudent_password(mySet.getString("student_password"));
+						student.setGrade(mySet.getInt("grade"));
+						student.setGpa(mySet.getString("gpa"));
+						list.add(student);
+					}
+					
+				}catch(SQLException sqlEx){
+					sqlEx.printStackTrace();
+				}catch(ClassNotFoundException cnfEx) {
+					cnfEx.printStackTrace();
+				}finally {
+					try {
+						//结果集使用完毕，关闭数据集操作对象的数据库连接对象
+						myDB.releaseConnection();
+					}catch(SQLException sqlEx) {
+						sqlEx.printStackTrace();
+					}
+				}
+				System.out.println(list.size());
+				return list;
+			}
+			
 }

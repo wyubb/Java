@@ -12,12 +12,15 @@ import domain.User;
 public interface IUserDAO {
 	//添加一个用户到数据库
 	public void addUser(User user);
+	//更新管理员用户信息
+	public void updateUser(User user);
+	//删除用户
+	public void deleteUser(String username);
 	//根据用户编号获取用户信息，以User对象的形式返回
 	public User getUserByID(String id);
 	//根据用户名获取用户信息，以User对象的形式返回
 	public List<User> getUserByUserName(String userName);
 	
-	public void updateUser(User user);
 	
 	
 	

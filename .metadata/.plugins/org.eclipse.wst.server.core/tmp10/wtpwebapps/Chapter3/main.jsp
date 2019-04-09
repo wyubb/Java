@@ -21,6 +21,7 @@
 				<a href = "addinformation.jsp">发布信息</a>
 				<a href = "addclasses.jsp">添加班级</a>
 				<a href = "class_student_detail.jsp">所有学生信息</a>
+				<a href = "addstudent.jsp">添加学生</a>
 				<a href = "login.jsp">退出</a>
 				<h3>管理员：<%=((User)session.getAttribute("user")).getUserName() %></h3>				
 		</div>

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.IClassesDAO;
+import dao.IDatabaseDAO;
 import domain.Classes;
 
 //Classes类对应的DAO
@@ -86,4 +87,43 @@ public class ClassesDAO implements IClassesDAO{
 		//返回结果
 		return list;	
 	}
+	
+	//更新班级信息
+		public void updateClass(Classes classes) {
+			//初始化数据库访问类
+			IDatabaseDAO myDB = new DatabaseDAO();
+			//构造SQL语句
+			String sql = "update classes set classes_id = '"+classes.getClasses_id()+"',classes_name = '"+classes.getClasses_name()+"',"
+					+ "classes_speciality = '"+classes.getClasses_speciality()+"',classes_teacher = '"+classes.getClasses_teacher()+"',"
+							+ "grade = '"+classes.getGrade()+"' where classes_id = '"+classes.getClasses_id()+"'   ";
+			System.out.println(sql);
+			try {
+				//执行SQL语句
+				myDB.executeSQL(sql);
+			}catch(SQLException sqlEx){
+				sqlEx.printStackTrace();
+			}catch(ClassNotFoundException cnfEx) {
+				cnfEx.printStackTrace();
+			}			
+		}
+		
+		
+		//根据班级编号删除班级
+		public void deleteClass(String classes_id) {
+			//初始化数据库访问类
+			IDatabaseDAO myDB = new DatabaseDAO();
+			//构造SQL语句
+			String sql = "delete from classes where classes_id = '"+classes_id+"'";
+			try {
+				//执行SQL语句
+				myDB.executeSQL(sql);
+			}catch(SQLException sqlEx){
+				sqlEx.printStackTrace();
+			}catch(ClassNotFoundException cnfEx) {
+				cnfEx.printStackTrace();
+			}		
+		}
+		
+		
+	
 }

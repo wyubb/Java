@@ -73,6 +73,26 @@ public class StudentService implements IStudentService{
 		
 		//获取所有学生列表
 		public List<Student> getAllStudent(){
-			return studentDAO.getAllStudent();
+			return studentDAO.getAllStudent();			
+		}
+		
+		//更新个人资料
+		public void updateStudent(Student student) {
+			//获取学生用户名(学号)
+			String student_id = student.getStudent_id();
+			//从数据库中查询用户名为student_id的用户
+			List<Student> students = studentDAO.getStudentByUserName(student_id);
+			if(students.size() > 0) {
+				studentDAO.updateStudent(student);
+			}else {
+				// 抛出异常
+				throw new RuntimeException("更新失败！");
+			}
+			
+		}
+		//删除管理员用户
+		public void deleteStudent(String student_id) {
+			studentDAO.deleteStudent(student_id);
+			System.out.println("删除学生："+student_id);
 		}
 }

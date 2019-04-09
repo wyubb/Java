@@ -12,8 +12,13 @@ import domain.Classes;
 public interface IClassesDAO {
 	//添加一个班级到数据库
 	public void addClasses(Classes classes);
+	
 	//获取所有班级信息
 	public List<Classes> getAllClasses();
+	//更新班级信息
+	public void updateClass(Classes classes);
+	//根据班级编号删除班级
+	public void deleteClass(String classes_id);
 	
 	
 }

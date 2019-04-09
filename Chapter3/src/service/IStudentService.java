@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import domain.Student;
+import domain.User;
 
 public interface IStudentService {
 	//添加学生信息到数据库
@@ -17,4 +18,8 @@ public interface IStudentService {
 	public Student getGpa(String student_id);
 	//获取所有学生列表
 	public List<Student> getAllStudent();
+	//更新个人资料
+	public void updateStudent(Student student);	
+	//删除管理员用户
+	public void deleteStudent(String student_id);
 }

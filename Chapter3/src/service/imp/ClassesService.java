@@ -27,4 +27,20 @@ public class ClassesService implements IClassesService{
 	public List<Classes> getAllClasses(){
 		return classesDAO.getAllClasses();
 	}
+	
+	//更新个人资料
+	public void updateClasses(Classes classes){
+		//获得班级id
+		//String classes_id = classes.getClasses_id();
+		
+		classesDAO.updateClass(classes);
+	
+	}
+	
+//根据班级编号删除班级
+	public void deleteClasses(String classes_id) {
+		classesDAO.deleteClass(classes_id);
+		System.out.println("删除了班级："+classes_id);
+	}
+	
 }

@@ -116,4 +116,11 @@ public class UserService implements IUserService {
 			throw new RuntimeException("更新失败！");
 		}
 	}
+	
+	//删除管理员用户
+	public void delete(String username) {
+		userDAO.deleteUser(username);
+		System.out.println("删除用户："+username);
+	}
+	
 }

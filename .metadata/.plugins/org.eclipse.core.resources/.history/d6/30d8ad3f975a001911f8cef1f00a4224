@@ -1,0 +1,26 @@
+package dao;
+
+import java.util.List;
+import domain.Student;
+
+/**
+ * Student类对应的DAO接口，提供一些与用户相关的数据库CRUD操作的公开的方法声明
+ * @author Administrator
+ *
+ */
+public interface IStudentDAO {
+		//添加一个学生用户到数据库
+		public void addStudent(Student student);
+		//根据用户编号获取用户信息，以Student对象的形式返回
+		public Student getStudentByID(String id);
+		//根据用户名获取用户信息，以Student对象的形式返回
+		public List<Student> getStudentByUserName(String userName);
+		//根据学号查询绩点，排名情况
+		//public Student getStudentByClass(String classes_id);
+		//查询所有学生信息
+		public List<Student> getAllStudent();
+		//更新学生用户信息
+		public void updateStudent(Student student );
+		//删除学生用户
+		public void deleteStudent(String student_id);
+}

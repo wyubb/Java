@@ -12,7 +12,7 @@ public class User {
 	private String realName;
 	private String gender;
 	private String age;
-	private String personalSignature;//个性签名
+	private String personalSignature;//备注
 	
 	public User() {
 		super();
