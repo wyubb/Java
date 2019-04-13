@@ -17,9 +17,16 @@ public interface IStudentDAO {
 		public List<Student> getStudentByUserName(String userName);
 		//根据班级编号获取该班级所有学生的名单
 		public List<Student> getStuedntByClass(String student_class);
-		//
-		//查询数据表里所有学生信息
+		//查看某学生在班级的排名
+		
+		//根据专业编号获取该专业所有学生名单
+		public List<Student> getStudentBySdept(String speciality);
+		//查询数据表里所有学生信息，按照绩点排序
 		public List<Student> getAllStudent();
+		//查询数据表某专业所有学生信息，按照绩点排序
+		public List<Student> getSdeptStudent(String speciality);
+		//查询数据表里某班级所有学生信息，按照绩点排序
+		public List<Student> getClassStudent(String student_class);
 		//更新学生用户信息
 		public void updateStudent(Student student );
 		//删除学生用户

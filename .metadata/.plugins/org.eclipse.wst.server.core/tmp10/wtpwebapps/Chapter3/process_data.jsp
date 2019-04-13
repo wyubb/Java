@@ -42,7 +42,7 @@
 		userService.updateUser(user);		
 %>
         <!-- 修改成功，跳转到登录界面 -->
-		<jsp:forward page="main.jsp"></jsp:forward>
+		<jsp:forward page="process_admin_login.jsp"></jsp:forward>
 <%
 	}
 	//处理异常

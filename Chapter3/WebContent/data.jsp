@@ -28,7 +28,7 @@
 					<label>真实姓名</label>
 				</td>
 				<td>
-					<input type = "text" name = "realName" placeholder = "<%=((User)session.getAttribute("user")).getRealName() %>"/>
+					<input type = "text" name = "realName" value = "<%=((User)session.getAttribute("user")).getRealName() %>"/>
 				</td>		
 			</tr>
 			<tr>
@@ -36,7 +36,7 @@
 					<label>性别</label>
 				</td>
 				<td>
-					<input type = "text" name = "gender" placeholder = "<%=((User)session.getAttribute("user")).getGender() %>" />
+					<input type = "text" name = "gender" value = "<%=((User)session.getAttribute("user")).getGender() %>" />
 				</td>
 			</tr>
 			<tr>
@@ -44,7 +44,7 @@
 					<label>年龄</label>
 				</td>
 				<td>
-					<input type = "text" name = "age" placeholder = "<%=((User)session.getAttribute("user")).getAge() %>" />
+					<input type = "text" name = "age" value = "<%=((User)session.getAttribute("user")).getAge() %>" />
 				</td>
 			</tr>
 			<tr>
@@ -52,7 +52,7 @@
 					<label>备注</label>
 				</td>
 				<td>
-					<input type = "text" name = "personalSignature" placeholder = "<%=((User)session.getAttribute("user")).getPersonalSignature()%>" />
+					<input type = "text" name = "personalSignature" value = "<%=((User)session.getAttribute("user")).getPersonalSignature()%>" />
 				</td>
 			</tr>
 			<tr>
@@ -60,7 +60,7 @@
 					<label>密码</label>
 				</td>
 				<td>
-					<input type = "password" name = "password" placeholder = "<%=((User)session.getAttribute("user")).getPassword() %>"/>
+					<input type = "password" name = "password" value = "<%=((User)session.getAttribute("user")).getPassword() %>"/>
 				</td>		
 			</tr>
 			<tr>

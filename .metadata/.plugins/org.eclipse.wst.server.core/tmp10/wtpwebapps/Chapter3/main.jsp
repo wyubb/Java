@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=gbk"%>
 <%@page import="java.util.*,domain.*,service.imp.*,dao.imp.*"%>
-<html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>学生综合测评管理系统</title>
@@ -23,6 +23,7 @@
 				<a href = "class_student_detail.jsp">所有学生信息</a>
 				<a href = "addstudent.jsp">添加学生</a>
 				<a href = "login.jsp">退出</a>
+				<a href = "sp.jsp">专业</a>
 				<h3>管理员：<%=((User)session.getAttribute("user")).getUserName() %></h3>				
 		</div>
 		<div id="primarycontent">		

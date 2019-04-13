@@ -18,6 +18,10 @@ public interface IStudentService {
 	public Student getGpa(String student_id);
 	//获取所有学生列表
 	public List<Student> getAllStudent();
+	//获取某专业学生列表
+	public List<Student> getSdeptStudent(String speciality);
+	//获取某班级学生列表
+	public List<Student> getClassStudent(String classes_id);
 	//更新个人资料
 	public void updateStudent(Student student);	
 	//删除管理员用户

@@ -75,7 +75,14 @@ public class StudentService implements IStudentService{
 		public List<Student> getAllStudent(){
 			return studentDAO.getAllStudent();			
 		}
-		
+		//获取某专业学生列表
+		public List<Student> getSdeptStudent(String speciality){
+			return studentDAO.getSdeptStudent(speciality);
+		}
+		//获取某班级学生列表
+		public List<Student> getClassStudent(String classes_id){
+			return studentDAO.getClassStudent(classes_id);
+		}
 		//更新个人资料
 		public void updateStudent(Student student) {
 			//获取学生用户名(学号)

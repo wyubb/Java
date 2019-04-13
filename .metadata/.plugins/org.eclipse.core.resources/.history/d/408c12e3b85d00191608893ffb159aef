@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=gbk"%>
+<%@page import="java.util.*,domain.*,service.imp.*,dao.imp.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ËùÓÐÑ§ÉúÐÅÏ¢</title>
+</head>
+<body>
+<div id="menu">
+				<a href =	 "data.jsp">¸öÈË×ÊÁÏ</a>		
+				<a href = "main.jsp">¹«Ê¾ÐÅÏ¢ä¯ÀÀ</a>
+				<a href = "class.jsp">°à¼¶ÁÐ±í</a>
+				<a href = "register.jsp">Ìí¼Ó¹ÜÀíÔ±</a>			
+				<a href = "addinformation.jsp">·¢²¼ÐÅÏ¢</a>
+				<a href = "addclasses.jsp">Ìí¼Ó°à¼¶</a>
+				<a href = "class_student_detail.jsp">ËùÓÐÑ§ÉúÐÅÏ¢</a>
+				<a href = "addstudent.jsp">Ìí¼ÓÑ§Éú</a>
+				<a href = "login.jsp">ÍË³ö</a>
+				<h3>¹ÜÀíÔ±£º<%=((User)session.getAttribute("user")).getUserName() %></h3>				
+</div>	
+<jsp:useBean id="studentService" class="service.imp.StudentService" scope="session"></jsp:useBean>
+<%
+    //µ÷ÓÃÒµÎñÂß¼­²ã·½·¨£¬»ñÈ¡ËùÓÐÐÅÏ¢ÁÐ±í
+	List<Student> list = studentService.getAllStudent();
+%>
+	<%
+		for(Student student:list){
+			
+	%>	
+		<p>Ñ§ºÅ:<%=student.getStudent_id()%> ÐÕÃû£º<%=student.getStudent_name()%> ¼¨µã£º<%=student.getGpa() %>¼¨µãÅÅÃû£º<%=student.getClass_gpa() %>></p>
+	<%
+			
+		}
+	%>			
+<a href = "addstudent.jsp">Ìí¼ÓÑ§Éú</a>
+</body>
+</html>

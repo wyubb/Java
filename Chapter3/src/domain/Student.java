@@ -8,8 +8,16 @@ public class Student {
 		private String student_password;
 		private int grade;
 		private String student_class;
-		
 		private String gpa;	
+		private int class_gpa;
+		
+		public int getClass_gpa() {
+			return class_gpa;
+		}
+		public void setClass_gpa(int class_gpa) {
+			this.class_gpa = class_gpa;
+		}
+		
 		
 		public String getGpa() {
 			return gpa;

@@ -28,7 +28,7 @@
 		for(Student student:list){
 			
 	%>	
-		<p>学号:<%=student.getStudent_id()%> 姓名：<%=student.getStudent_name()%> 绩点：<%=student.getGpa() %></p>
+		<p>学号:<%=student.getStudent_id()%> 姓名：<%=student.getStudent_name()%> 绩点：<%=student.getGpa() %>绩点排名：<%=student.getClass_gpa() %></p>
 	<%
 			
 		}

@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=gbk"%>
-
 <%@page import="service.imp.UserService.*,domain.User.*"%><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

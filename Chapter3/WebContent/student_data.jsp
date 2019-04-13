@@ -11,7 +11,8 @@
 				<a href =	 "student_data.jsp">个人资料</a>
 				<a href = "gpa.jsp"	>查看绩点情况</a>	
 				<a href ="">综合测评</a>
-				<a href = "student_main.jsp">公示信息浏览</a>				
+				<a href = "student_main.jsp">公示信息浏览</a>
+				<a href = "photo.jsp"	>上传图片</a>			
 				<a href = "login.jsp">退出</a>			
 </div>
 		<div>

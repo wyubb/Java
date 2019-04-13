@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [10/Apr/2019:21:53:08 +0800] "GET /Chapter3/data.jsp HTTP/1.1" 500 2840
+0:0:0:0:0:0:0:1 - - [10/Apr/2019:21:53:43 +0800] "GET /Chapter3/classes_detail.jsp?classes_id=150801 HTTP/1.1" 500 3025

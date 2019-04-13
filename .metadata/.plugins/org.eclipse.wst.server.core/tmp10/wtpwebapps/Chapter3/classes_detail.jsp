@@ -18,7 +18,7 @@
 				<a href = "login.jsp">退出</a>
 				<h3>管理员：<%=((User)session.getAttribute("user")).getUserName() %></h3>				
 		</div>	
-<jsp:useBean id="classesService" class="service.imp.ClassesService" scope="session"></jsp:useBean>
+<jsp:useBean id="studentService" class="service.imp.StudentService" scope="session"></jsp:useBean>
 <%
 	request.setCharacterEncoding("gbk");
 	String id = request.getParameter("classes_id");
@@ -26,16 +26,14 @@
 %>
 <%
     //调用业务逻辑层方法，获取所有信息列表
-	List<Classes> list = classesService.getAllClasses();
+	List<Student> list = studentService.getClassStudent(id);
 %>
-	<%
-		for(Classes classes:list){
-			if(classes.getClasses_id() == id){
+<%
+		for(Student student:list){			
 	%>	
-		<p>id:<%=classes.getClasses_id()%>班级名称：<%=classes.getClasses_name()%></p>
-	<%
-			}
+		<p>学号:<%=student.getStudent_id()%> 姓名：<%=student.getStudent_name()%> 绩点：<%=student.getGpa() %>绩点排名：<%=student.getClass_gpa()%></p>
+	<%			
 		}
-	%>			
+	%>				
 </body>
 </html>

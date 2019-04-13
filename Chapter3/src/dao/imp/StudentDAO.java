@@ -109,21 +109,37 @@ public class StudentDAO implements IStudentDAO {
 			}
 									
 			public List<Student> getAllStudent(){
-				//初始化SQL语句
-				String sql = "select * from student";
+				//初始化SQL语句				
+				//按绩点排序
+				String sql = "select * from student order by gpa desc";
+				System.out.println("绩点排序");
 				//调用相关方法，并返回查询结果
 				return getStudentBySqlString(sql);
 			}
+			//查询数据表某专业所有学生信息，按照绩点排序
+			public List<Student> getSdeptStudent(String speciality){
+				String sql = "select * from student,classes where student_class = classes_id  and classes.classes_speciality ='"+speciality+"' order by student.gpa desc";
+				return getStudentBySqlString(sql);
+			}
+			
+			//查询数据表里某班级所有学生信息，按照绩点排序
+			public List<Student> getClassStudent(String student_class){				
+				String sql = "select * from student where student_class  = '"+student_class+"' order by gpa desc";				
+				return getStudentBySqlString(sql);
+			}
+				
+			
 			
 			private List<Student> getStudentBySqlString(String sql) {	
 				//初始化数据库访问类
 				DatabaseDAO myDB = new DatabaseDAO();
-				
+				int i = 0;
 				//定义学生列表，预备返回对象
 				List<Student> list = new ArrayList<Student>();
 				try {
 					ResultSet mySet = myDB.getResultSet(sql);
-					while(mySet.next()) {						
+					while(mySet.next()) {	
+						i++;
 						Student student = new Student();
 						student.setStudent_id(mySet.getString("student_id"));
 						student.setStudent_name(mySet.getString("student_name"));
@@ -133,6 +149,7 @@ public class StudentDAO implements IStudentDAO {
 						student.setStudent_password(mySet.getString("student_password"));
 						student.setGrade(mySet.getInt("grade"));
 						student.setGpa(mySet.getString("gpa"));
+						student.setClass_gpa(i);
 						list.add(student);
 					}				
 				}catch(ClassNotFoundException cnfEx){
@@ -208,12 +225,47 @@ public class StudentDAO implements IStudentDAO {
 					cnfEx.printStackTrace();
 				}		
 			}
-			//根据班级编号获取该班级所有学生的名单
+			//根据班级编号获取该班级所有学生的名单,根据学号排序
 			public List<Student> getStuedntByClass(String student_class){
 				IDatabaseDAO myDB = new DatabaseDAO();
 				Student student = new Student();
 				List<Student> list = new ArrayList<Student>();
-				String sql = "select * from student where student_class ='"+ student_class +"'";
+				String sql = "select * from student where student_class ='"+ student_class +"' order by student_id";
+				try {
+					ResultSet mySet = myDB.getResultSet(sql);
+					while(mySet.next()) {
+						student.setStudent_id(mySet.getString("student_id"));
+						student.setStudent_name(mySet.getString("student_name"));
+						student.setStudent_sex(mySet.getString("student_sex"));
+						student.setStudent_tel(mySet.getString("student_tel"));
+						student.setStudent_class(mySet.getString("student_class"));
+						student.setStudent_password(mySet.getString("student_password"));
+						student.setGrade(mySet.getInt("grade"));
+						student.setGpa(mySet.getString("gpa"));
+						list.add(student);
+					}
+					
+				}catch(SQLException sqlEx){
+					sqlEx.printStackTrace();
+				}catch(ClassNotFoundException cnfEx) {
+					cnfEx.printStackTrace();
+				}finally {
+					try {
+						//结果集使用完毕，关闭数据集操作对象的数据库连接对象
+						myDB.releaseConnection();
+					}catch(SQLException sqlEx) {
+						sqlEx.printStackTrace();
+					}
+				}
+				System.out.println(list.size());
+				return list;
+			}
+			//根据专业编号获取该专业所有学生名单
+			public List<Student> getStudentBySdept(String speciality){
+				IDatabaseDAO myDB = new DatabaseDAO();
+				Student student = new Student();
+				List<Student> list = new ArrayList<Student>();
+				String sql = "select * from student,classes where student.student_class = classes.classes.id where classes.speciality  ='"+speciality +"' order by student.student_id";
 				try {
 					ResultSet mySet = myDB.getResultSet(sql);
 					while(mySet.next()) {
