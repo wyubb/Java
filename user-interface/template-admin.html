@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="林志滨">
+  <meta name="keywords" content="公告查看与编辑,绩点查询,个人资料查看与修改">
+  <meta name="description" content="学生综合测评管理系统">
+  <title>admin 模板-页面的基本结构</title>
+
+  <!-- 引入 bootstrap 样式库 -->
+  <link href="./libs/bootstrap@3.3.7.min.css" rel="stylesheet">
+  <!-- 引入页面公共样式表 -->
+  <link href="./libs/common.css" rel="stylesheet">
+  <!-- 本页面样式  -->
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- 左侧菜单栏 start -->
+  <div class="sidebar">
+    <div class="welcome">Welcome!</div>
+    <div class="user-profile">
+      <img class="user-type" src="./images/admin.png" alt="管理员用户" title="管理员用户">
+      <div>我是管理员</div>
+    </div>
+    <div class="menu-bar">
+      <!-- 公告栏 -->
+      <a class="menu-title menu-title-active" href="javascript:;">
+        <div class="menu-title-left">
+          <img class="menu-title-icon" src="./images/notice.png" title="公告栏">
+          <div>公告栏</div>
+        </div>
+        <img class="menu-title-arrow" src="./images/up-arrow.png" title="收起">
+      </a>
+      <ul class="menu-item-bar menu-item-bar-active">
+          <li><a class="menu-item menu-item-active" href="javascript:;">查看</a></li>
+          <li><a class="menu-item" href="javascript:;">增加</a></li>
+      </ul>
+      <!-- 个人资料 -->
+      <a class="menu-title" href="javascript:;">
+        <div class="menu-title-left">
+          <img class="menu-title-icon" src="./images/user-data.png" title="个人资料">
+          <div>个人资料</div>
+        </div>
+        <img class="menu-title-arrow" src="./images/below-arrow.png" title="展开">
+      </a>
+      <ul class="menu-item-bar">
+        <li><a class="menu-item" href="javascript:;">查看</a></li>
+        <li><a class="menu-item" href="javascript:;">修改</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 左侧菜单栏 end -->
+
+  <!-- 中间内容主体 start -->
+  <div class="container">
+    <div class="jumbotron">
+      <h1>公告通知</h1>
+      
+    </div>
+  </div>
+  <!-- 中间内容主体 end -->
+
+  <!-- 右侧时钟日历 start -->
+  <div class="datepicker" id="datepicker">
+    <div class="datepicker-header">
+      <canvas class="clock" id="clock" width="200px" height="200px"></canvas>
+    </div>
+  </div>
+  <!-- 右侧时钟日历 end -->
+  
+
+  <!-- 引入 jquery 插件 -->
+  <script src="./libs/jquery@3.4.0.min.js"></script>
+  <!-- 引入 jquery ui 插件 -->
+  <script src='./libs/jquery-ui@1.12.1.min.js'></script>
+  <!-- 引入 bootstrap 的所有 javascript 插件 -->
+  <script src="./libs/bootstrap@3.3.7.min.js"></script>
+  <!-- 引入页面公共脚本 -->
+  <script src="./libs/common.js"></script>
+  <!-- 本页面脚本 -->
+  <script>
+    
+  </script>
+</body>
+</html>
