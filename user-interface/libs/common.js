@@ -1,4 +1,4 @@
-(function () {
+$(document).ready(function () {
   // 绘制时钟
   drawClock()
   // 绘制日历
@@ -37,7 +37,7 @@
       $(this).addClass('menu-item-active')
     })
   })
-})()
+})
 
 // 绘制时钟
 function drawClock() {
